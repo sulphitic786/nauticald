@@ -1,5 +1,4 @@
 import aboutus from "../assets/imgs/aboutus.jpg";
-import aboutwebfo from "../assets/imgs/aboutwebfo.jpg";
 import { FaFacebookF } from "react-icons/fa";
 import Left from "../assets/imgs/Left.png";
 import Right from "../assets/imgs/Right.png";
@@ -28,6 +27,7 @@ import { BiLogoBlender } from "react-icons/bi";
 import { FiFigma } from "react-icons/fi";
 import { AiOutlineProduct } from "react-icons/ai";
 import { MdAdsClick } from "react-icons/md";
+import Navbar from "./Navbar";
 
 
 
@@ -155,6 +155,7 @@ const HomePage = () => {
 
   return (
     <>
+    {/* <Navbar/> */}
       <div className=" text-white flex flex-col lg:py-40 py-28 items-center justify-center px-[3%] text-center" id="home">
         <main className="text-center space-y-5 " data-aos="fade-right">
           <h1 className="md:text-6xl text-3xl font-bold mb-4 coustard-regular hover:text-[#b48104] text-gradient md:leading-[80px] leading-8">
