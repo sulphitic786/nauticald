@@ -112,7 +112,7 @@ function WebMaintainance() {
       <HeroProp
         heading="Professional Web Maintenance Services"
         highlightText="Keep Your Website Secure & Updated"
-        description="Our web maintenance packages ensure that your website remains updated, secure, and optimized for performance. We take care of regular backups, security checks, and content updates so you can focus on growing your business."
+        description="Our web maintenance packages ensure that your website remains updated, secure, and optimized for performance. We take care of regular backups, security checks, and content updates so you can focus on growing your business easily."
         image={webmain}
         secondHeading="Why Regular Maintenance is Crucial for "
         secondHighlightText="Your Website"
