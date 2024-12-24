@@ -77,7 +77,7 @@ function WebDev() {
       icon: Icon,
       title: "Advanced Web Development Plan",
       description:
-        "Perfect for growing businesses looking to enhance their online presence.",
+        "Perfect for growing  a businesses looking to enhance their online presence.",
       price: "$1000",
       duration: "per project",
       features: [
