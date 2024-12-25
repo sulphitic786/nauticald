@@ -1,42 +1,43 @@
 import React, { useState } from "react";
-import logo from "../assets/imgs/logo.png";
-import { FaPhone } from "react-icons/fa6";
+import {
+  FaPhone,
+  FaSquareFacebook,
+  FaSquareInstagram,
+  FaSquareWhatsapp,
+} from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaSquareWhatsapp } from "react-icons/fa6";
 
 function ContactUs() {
-      const [formData, setFormData] = useState({
-        name: "",
-        age: "",
-        email: "",
-        postCode: "",
-        phone: "",
-        photo: null,
-      });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        console.log("Form Data Submitted:", formData);
-    
-        setFormData({
-          name: "",
-          age: "",
-          email: "",
-          postCode: "",
-          phone: "",
-          photo: null, // Resetting the photo field as well
-        });
-    
-        document.querySelector('input[type="file"]').value = "";
-      };
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    email: "",
+    postCode: "",
+    phone: "",
+    photo: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("Form Data Submitted:", formData);
+
+    setFormData({
+      name: "",
+      age: "",
+      email: "",
+      postCode: "",
+      phone: "",
+      photo: null, // Resetting the photo field as well
+    });
+
+    document.querySelector('input[type="file"]').value = "";
+  };
   return (
     <div>
       <section className="md:px-[5%] px-[5%] py-[5%]" id="contactus">
@@ -62,7 +63,7 @@ function ContactUs() {
               </p>
               <p className="flex items-center xl:gap-8 md:gap-2 gap-2 inter font-normal lg:text-xl text-base coustard-regular">
                 <MdOutlineEmail className="md:text-3xl text-xl text-[#b48104] " />
-                contactus@dynamicd.com
+                contactus@nauticald.com
               </p>
             </div>
 
@@ -77,8 +78,15 @@ function ContactUs() {
               </p>
 
               <p className="flex items-center xl:gap-8 md:gap-2 gap-2 inter font-normal lg:text-xl text-base coustard-regular">
-                <FaSquareWhatsapp className="md:text-3xl text-xl text-[#b48104] " />
-                Whatsapp
+                <a
+                  href="https://wa.me/14238400006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center xl:gap-8 md:gap-2 gap-2"
+                >
+                  <FaSquareWhatsapp className="md:text-3xl text-xl text-[#b48104]" />
+                  Whatsapp
+                </a>
               </p>
             </div>
           </div>
@@ -194,7 +202,7 @@ function ContactUs() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
-export default ContactUs
+export default ContactUs;

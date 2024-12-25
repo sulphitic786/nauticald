@@ -1,22 +1,20 @@
-
-import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Routes, Route } from "react-router-dom";
-import HomePage from './components/HomePage';
-import { useNavigate } from "react-router-dom";
-import SeoPackage from "./components/SeoPackage";
-import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import DigitalMarketing from "./components/DigitalMarketing";
 import Footer from "./components/Footer";
+import GraphicPackage from "./components/GraphicPackage";
+import HomePage from "./components/HomePage";
+import LogoPackage from "./components/LogoPackage";
+import Navbar from "./components/Navbar";
+import PolicyPage from "./components/PolicyPage";
+import ProductDesignPackage from "./components/ProductDesignPackage";
+import RefundPolicy from "./components/RefundPolicy";
+import SeoPackage from "./components/SeoPackage";
+import TermsPage from "./components/TermsPage";
 import WebDev from "./components/WebDev";
 import WebMaintainance from "./components/WebMaintainance";
-import LogoPackage from "./components/LogoPackage";
-import GraphicPackage from "./components/GraphicPackage";
-import DigitalMarketing from "./components/DigitalMarketing";
-import ProductDesignPackage from "./components/ProductDesignPackage";
-import TermsPage from "./components/TermsPage";
-import ContactUs from "./components/ContactUs";
-import PolicyPage from "./components/PolicyPage";
 
 function App() {
   const [isAOSActive, setIsAOSActive] = useState(true);
@@ -54,22 +52,34 @@ function App() {
 
   return (
     <>
-   
       <Navbar />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/seopackage" element={<SeoPackage />} />
         <Route exact path="/webpackage" element={<WebDev />} />
-        <Route exact path="/webmaintainancepackage" element={<WebMaintainance />} />
+        <Route
+          exact
+          path="/webmaintainancepackage"
+          element={<WebMaintainance />}
+        />
         <Route exact path="/logopackage" element={<LogoPackage />} />
         <Route exact path="/graphicpackage" element={<GraphicPackage />} />
-        <Route exact path="/digitalmarketingpackage" element={<DigitalMarketing />} />
-        <Route exact path="/productdesigningpackage" element={<ProductDesignPackage />} />
-        <Route exact path="/termspage" element={<TermsPage />} />
-        <Route exact path="/policypage" element={<PolicyPage />} />
+        <Route
+          exact
+          path="/digitalmarketingpackage"
+          element={<DigitalMarketing />}
+        />
+        <Route
+          exact
+          path="/productdesigningpackage"
+          element={<ProductDesignPackage />}
+        />
+        <Route exact path="/terms" element={<TermsPage />} />
+        <Route exact path="/policy" element={<PolicyPage />} />
+        <Route exact path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
-     
-      <Footer/>
+
+      <Footer />
     </>
   );
 }

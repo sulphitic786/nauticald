@@ -1,13 +1,44 @@
-import React, { useState } from "react";
-import logo from "../assets/imgs/logo.png";
+import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaSquareWhatsapp } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/imgs/logo.png";
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const scrollToSectionWithOffset = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      const yOffset = -80; // Adjust the offset as needed
+      const yPosition =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: yPosition,
+        behavior: "smooth",
+      });
+    } else {
+      // Redirect to home or any specific page, then scroll
+      navigate("/");
+      setTimeout(() => {
+        const delayedSection = document.getElementById(id);
+        if (delayedSection) {
+          const yOffset = -80;
+          const yPosition =
+            delayedSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({
+            top: yPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 500); // Delay to ensure the new page has loaded
+    }
+  };
+
   return (
     <>
       <section className="2xl:px-[100px]  pt-[50px] pb-[30px] p-[5%] bg-black">
@@ -72,7 +103,7 @@ function Footer() {
             <ul className="sofia_regular 2xl:text-[20px] text-base text-white font-semibold space-y-4 mt-4 ">
               <li className="flex items-center xl:gap-8 md:gap-2 gap-2 ">
                 <MdOutlineEmail className="md:text-2xl text-xl text-[#b48104] " />
-                contactus@dynamicd.com
+                contactus@nauticald.com
               </li>
               <li className="flex items-start xl:gap-8 md:gap-2 gap-2 ">
                 <FaPhone className="md:text-2xl text-xl text-[#b48104] " />
@@ -92,8 +123,30 @@ function Footer() {
               rights reserved
             </p>
             <div className="md:text-base underline text-sm text-white flex items-center gap-5 capitalize">
-              <Link to="/termspage"> Terms</Link>
-              <Link to="/policypage"> Privacy</Link>
+              <Link
+                to="/terms"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Terms
+              </Link>
+              <Link
+                to="/policy"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Privacy
+              </Link>
+              <Link
+                to="/refund-policy"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Refund Policy
+              </Link>
             </div>
           </div>
         </div>
