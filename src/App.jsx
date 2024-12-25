@@ -7,8 +7,16 @@ import HomePage from './components/HomePage';
 import { useNavigate } from "react-router-dom";
 import SeoPackage from "./components/SeoPackage";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WebDev from "./components/WebDev";
 import WebMaintainance from "./components/WebMaintainance";
+import LogoPackage from "./components/LogoPackage";
+import GraphicPackage from "./components/GraphicPackage";
+import DigitalMarketing from "./components/DigitalMarketing";
+import ProductDesignPackage from "./components/ProductDesignPackage";
+import TermsPage from "./components/TermsPage";
+import ContactUs from "./components/ContactUs";
+import PolicyPage from "./components/PolicyPage";
 
 function App() {
   const [isAOSActive, setIsAOSActive] = useState(true);
@@ -46,13 +54,22 @@ function App() {
 
   return (
     <>
+   
       <Navbar />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/seopackage" element={<SeoPackage />} />
         <Route exact path="/webpackage" element={<WebDev />} />
         <Route exact path="/webmaintainancepackage" element={<WebMaintainance />} />
+        <Route exact path="/logopackage" element={<LogoPackage />} />
+        <Route exact path="/graphicpackage" element={<GraphicPackage />} />
+        <Route exact path="/digitalmarketingpackage" element={<DigitalMarketing />} />
+        <Route exact path="/productdesigningpackage" element={<ProductDesignPackage />} />
+        <Route exact path="/termspage" element={<TermsPage />} />
+        <Route exact path="/policypage" element={<PolicyPage />} />
       </Routes>
+     
+      <Footer/>
     </>
   );
 }
