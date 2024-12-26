@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function HeroProp({
@@ -12,7 +11,7 @@ function HeroProp({
   cards,
 }) {
   return (
-    <section className="xl:py-20 lg:py-[100px] md:py-14 py-9 px-[5%]">
+    <section className="xl:py-20 lg:py-[100px] md:py-14 sm:py-14 !py-[80px] px-[5%]">
       <div className="flex items-center text-center justify-center flex-col">
         <div className="md:w-[85%] w-full">
           <h1 className="text-black text-center 2xl:text-[60px] xl:text-[40px] lg:text-4xl md:text-3xl text-[22px] 2xl:!leading-[112px] xl:!leading-[70px] md:!leading-[44px] !leading-8">
@@ -54,7 +53,9 @@ function HeroProp({
             <h2 className="xl:text-[36px] text-xl font-bold pt-4 xl:pt-6 text-black">
               {card.title}
             </h2>
-            <p className="xl:text-[20px] text-base xl:pt-4">{card.description}</p>
+            <p className="xl:text-[20px] text-base xl:pt-4">
+              {card.description}
+            </p>
             <div className="flex xl:gap-4 lg:gap-2 gap-2 pb-2">
               <h2 className="xl:text-[36px] text-2xl pt-2">{card.price}</h2>
               <p className="xl:text-[20px] text-lg">{card.duration}</p>
@@ -62,7 +63,10 @@ function HeroProp({
             <hr />
             <div className="space-y-2">
               {card.features.map((feature, featureIndex) => (
-                <div key={featureIndex} className="flex gap-3 mt-4 items-center">
+                <div
+                  key={featureIndex}
+                  className="flex gap-3 mt-4 items-center"
+                >
                   <img src={card.checkIcon} alt="" />
                   <h3 className="xl:text-[20px] text-sm">{feature}</h3>
                 </div>
