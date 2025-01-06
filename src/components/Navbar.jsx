@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/imgs/logo.png";
-import { RiArrowDropDownLine } from "react-icons/ri";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,6 +10,12 @@ function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const navigateLink = (link) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsDropdownOpen(false);
+    navigate(link);
   };
 
   const scrollToSectionWithOffset = (id) => {
@@ -94,7 +100,7 @@ function Navbar() {
               </button>
             </li>
             <li
-              className="relative group"
+              className="relative group transition-transform duration-300 transform"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
@@ -109,38 +115,52 @@ function Navbar() {
               {isDropdownOpen && (
                 <ul className="absolute left-0 mt-0 w-52 bg-white text-sm border border-gray-200 shadow-lg">
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/webpackage")}>
-                      Web Package
+                    <button onClick={() => navigateLink("/webpackage")}>
+                      Web PackageMMM
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/seopackage")}>
+                    <button onClick={() => navigateLink("/seopackage")}>
                       SEO Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/webmaintainancepackage")}>
+                    <button
+                      onClick={() => navigateLink("/webmaintainancepackage")}
+                    >
                       Web Maintenance Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/logopackage")} className="capitalize">
-                    logo Package
+                    <button
+                      onClick={() => navigateLink("/logopackage")}
+                      className="capitalize"
+                    >
+                      logo Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/graphicpackage")} className="capitalize">
-                    graphic Package
+                    <button
+                      onClick={() => navigateLink("/graphicpackage")}
+                      className="capitalize"
+                    >
+                      graphic Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/digitalmarketingpackage")} className="capitalize">
-                    Digital Marketing Package
+                    <button
+                      onClick={() => navigateLink("/digitalmarketingpackage")}
+                      className="capitalize"
+                    >
+                      Digital Marketing Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/productdesigningpackage")} className="capitalize">
-                    Product Designing Package
+                    <button
+                      onClick={() => navigateLink("/productdesigningpackage")}
+                      className="capitalize"
+                    >
+                      Product Designing Package
                     </button>
                   </li>
                 </ul>
@@ -237,38 +257,52 @@ function Navbar() {
               {isDropdownOpen && (
                 <ul className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-64 bg-white text-sm border border-gray-200 shadow-lg">
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/webpackage")}>
+                    <button onClick={() => navigateLink("/webpackage")}>
                       Web Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/seopackage")}>
+                    <button onClick={() => navigateLink("/seopackage")}>
                       SEO Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer">
-                    <button onClick={() => navigate("/webmaintainancepackage")}>
+                    <button
+                      onClick={() => navigateLink("/webmaintainancepackage")}
+                    >
                       Web Maintenance Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/logopackage")} className="capitalize">
-                    logo Package
+                    <button
+                      onClick={() => navigateLink("/logopackage")}
+                      className="capitalize"
+                    >
+                      logo Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/graphicpackage")} className="capitalize">
-                    graphic Package
+                    <button
+                      onClick={() => navigateLink("/graphicpackage")}
+                      className="capitalize"
+                    >
+                      graphic Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/digitalmarketingpackage")} className="capitalize">
-                    Digital Marketing Package
+                    <button
+                      onClick={() => navigateLink("/digitalmarketingpackage")}
+                      className="capitalize"
+                    >
+                      Digital Marketing Package
                     </button>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#b48104] hover:text-white cursor-pointer ">
-                    <button onClick={() => navigate("/productdesigningpackage")} className="capitalize">
-                    Product Designing Package
+                    <button
+                      onClick={() => navigateLink("/productdesigningpackage")}
+                      className="capitalize"
+                    >
+                      Product Designing Package
                     </button>
                   </li>
                 </ul>
